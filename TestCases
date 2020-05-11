@@ -1,0 +1,163 @@
+package application; 
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestCases {
+
+	
+	// checks which triple wins.
+	@Test
+	void testRoundWinnerForTriples() {
+		int playerADiceRolled[] = {1,1,1};
+		int playerBDiceRolled[] = {2,2,2};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerB);
+	    
+	}
+	@Test
+	void testRoundWinnerForDoubles() {
+		int playerADiceRolled[] = {4,6,6};
+		int playerBDiceRolled[] = {2,5,5};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerA);
+		
+	}
+	@Test
+	void testRoundWinnerFor421() {
+		int playerADiceRolled[] = {4,6,2};
+		int playerBDiceRolled[] = {1,4,2};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerB);
+		
+	}
+	@Test
+	void testRoundWinnerForDoublesAndNonSpecial() {
+		int playerADiceRolled[] = {2,3,1};
+		int playerBDiceRolled[] = {1,6,1};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerB);
+		
+	}
+	@Test
+	void testRoundWinnerForNonSpecialAndDoubles() {
+		int playerADiceRolled[] = {1,1,2};
+		int playerBDiceRolled[] = {5,6,1};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerA);
+		
+	}
+	@Test
+	void testRoundWinnerForTriplesAndNonSpecial() {
+		int playerADiceRolled[] = {1,1,1};
+		int playerBDiceRolled[] = {5,6,4};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerA);
+		
+	}
+	@Test
+	void testRoundWinnerForNonSpecialAndTriples() {
+		int playerADiceRolled[] = {4,5,6};
+		int playerBDiceRolled[] = {2,2,2};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerB);
+		
+	}
+	@Test
+	void testRoundWinnerForEqualDice() {
+		int playerADiceRolled[] = {3,3,3};
+		int playerBDiceRolled[] = {3,3,3};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerA);
+		
+	}
+	@Test
+	void testRoundWinnerForNonSpecialAndNonSpecial() {
+		int playerADiceRolled[] = {3,1,5};
+		int playerBDiceRolled[] = {5,6,1};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerB);
+		
+	}
+	@Test
+	void testRoundWinnerForTwoHighestScores() {
+		int playerADiceRolled[] = {4,2,1};
+		int playerBDiceRolled[] = {4,2,1};
+		
+		GameController controller = new GameController();
+		
+		PlayerModel playerA = new PlayerModel("Player A", 1, 0, playerADiceRolled);
+		PlayerModel playerB = new PlayerModel("Player B", 1, 0, playerBDiceRolled);
+		
+	    PlayerModel roundWinner = controller.roundWinner(playerA, playerB);
+	    
+	    assertEquals(roundWinner, playerA);
+		
+	}
+
+	
+
+}
