@@ -1,4 +1,7 @@
-pack/*
+/*
+ * CSCV335 
+ * Final Capstone
+ * 
  * Erik Ibarra Hurtado
  * Samuel Bryant
  * Leonardo Loureiro
@@ -7,6 +10,8 @@ pack/*
  * 
  * Main.java
  * 
+ * This is the starting point of the game.
+ * RulesView is displayed first and then loads the GameView when a button is clicked.
  * 
  * */
 package application;
@@ -16,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.fxml.FXMLLoader;
+
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
@@ -32,7 +38,6 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		System.out.print("Design 3");
 		launch(args);
 	}
 	@Override
