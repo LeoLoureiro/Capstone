@@ -1,12 +1,27 @@
+/*
+ * CSCV335 
+ * Final Capstone
+ * 
+ * Erik Ibarra Hurtado
+ * Samuel Bryant
+ * Leonardo Loureiro
+ * 
+ * Sunday, May 10, 2020
+ * 
+ * TestCases.java
+ * 
+ * This test file runs a set of tests against the roundWinner() method in the GameController.
+ * It is crucial to test for correct results in this method since the logic of the game is based on determining the winner of each round.
+ * 
+ * */
 package application; 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 class TestCases {
-
 	
-	// checks which triple wins.
+	// checks which triple is higher.
 	@Test
 	void testRoundWinnerForTriples() {
 		int playerADiceRolled[] = {1,1,1};
@@ -22,6 +37,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerB);
 	    
 	}
+	// checks which double is higher.
 	@Test
 	void testRoundWinnerForDoubles() {
 		int playerADiceRolled[] = {4,6,6};
@@ -37,6 +53,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerA);
 		
 	}
+	// checks if a player rolled 4, 2, 1.
 	@Test
 	void testRoundWinnerFor421() {
 		int playerADiceRolled[] = {4,6,2};
@@ -52,6 +69,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerB);
 		
 	}
+	// checks if a double wins against non-special rolls. PlayerB has doubles.
 	@Test
 	void testRoundWinnerForDoublesAndNonSpecial() {
 		int playerADiceRolled[] = {2,3,1};
@@ -67,6 +85,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerB);
 		
 	}
+	// checks if a double wins against non-special rolls. PlayerA has doubles.
 	@Test
 	void testRoundWinnerForNonSpecialAndDoubles() {
 		int playerADiceRolled[] = {1,1,2};
@@ -82,6 +101,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerA);
 		
 	}
+	// checks if a triple wins against non-special rolls. PlayerA has triples
 	@Test
 	void testRoundWinnerForTriplesAndNonSpecial() {
 		int playerADiceRolled[] = {1,1,1};
@@ -97,6 +117,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerA);
 		
 	}
+	// checks if a triple wins against non-special rolls. PlayerB has triples
 	@Test
 	void testRoundWinnerForNonSpecialAndTriples() {
 		int playerADiceRolled[] = {4,5,6};
@@ -112,6 +133,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerB);
 		
 	}
+	// checks who wins in case of a tie.
 	@Test
 	void testRoundWinnerForEqualDice() {
 		int playerADiceRolled[] = {3,3,3};
@@ -127,6 +149,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerA);
 		
 	}
+	// checks who wins when two rolls are non-special.
 	@Test
 	void testRoundWinnerForNonSpecialAndNonSpecial() {
 		int playerADiceRolled[] = {3,1,5};
@@ -142,6 +165,7 @@ class TestCases {
 	    assertEquals(roundWinner, playerB);
 		
 	}
+	// checks who wins if the two players roll 4,2,1.
 	@Test
 	void testRoundWinnerForTwoHighestScores() {
 		int playerADiceRolled[] = {4,2,1};
@@ -159,5 +183,4 @@ class TestCases {
 	}
 
 	
-
 }
