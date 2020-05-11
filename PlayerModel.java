@@ -1,44 +1,54 @@
 package application;
 
-public class PlayerModel {
-	private String name;
-	private int playerId;
-	private int points;
-	private int[] diceRolled;
-	
-	
-	
-	public PlayerModel(String name, int playerId, int points, int[] diceRolled) {
-		setName(name);
-		setPlayerId(playerId);
-		setPoints(points);
-		setDiceRolled(diceRolled);
+public class GameModel {
+	private int round;
+	private int numberOfRoll;
+	private PlayerModel currentFirstPlayerRolling;
+	private PlayerModel currentSecondPlayerRolling;
+	private PlayerModel playerRolling;
+	public GameModel(int round, int numberOfRoll, PlayerModel currentFirstPlayerRolling, PlayerModel currentSecondPlayerRolling, PlayerModel playerRolling){
+		
+		setRound(round);
+		setNumberOfRoll(numberOfRoll);
+		setCurrentFirstPlayerRolling(currentFirstPlayerRolling);
+		setCurrentSecondPlayerRolling(currentSecondPlayerRolling);
+		setPlayerRolling(playerRolling);
 		
 	}
 	
-	public String getName() {
-		return name;
+	public int getRound() {
+		return round;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setRound(int round) {
+		this.round = round;
 	}
-	public int getPlayerId() {
-		return playerId;
+	public int getNumberOfRoll() {
+		return numberOfRoll;
 	}
-	public void setPlayerId(int playerId) {
-		this.playerId = playerId;
+	public void setNumberOfRoll(int numberOfRoll) {
+		this.numberOfRoll = numberOfRoll;
 	}
-	public int getPoints() {
-		return points;
+	public PlayerModel getCurrentFirstPlayerRolling() {
+		return currentFirstPlayerRolling;
 	}
-	public void setPoints(int points) {
-		this.points = points;
+	public void setCurrentFirstPlayerRolling(PlayerModel currentFirstPlayerRolling) {
+		this.currentFirstPlayerRolling = currentFirstPlayerRolling;
 	}
-	public int[] getDiceRolled() {
-		return diceRolled;
+
+	public PlayerModel getCurrentSecondPlayerRolling() {
+		return currentSecondPlayerRolling;
 	}
-	public void setDiceRolled(int[] diceRolled) {
-		this.diceRolled = diceRolled;
+
+	public void setCurrentSecondPlayerRolling(PlayerModel currentSecondPlayerRolling) {
+		this.currentSecondPlayerRolling = currentSecondPlayerRolling;
+	}
+
+	public PlayerModel getPlayerRolling() {
+		return playerRolling;
+	}
+
+	public void setPlayerRolling(PlayerModel playerRolling) {
+		this.playerRolling = playerRolling;
 	}
 	
 	
